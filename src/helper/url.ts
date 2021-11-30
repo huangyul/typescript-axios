@@ -1,4 +1,4 @@
-import {isDate, isObject} from './util'
+import {isDate, isPlantObject} from './util'
 
 /**
  * 保留 @等关键字符
@@ -44,7 +44,7 @@ export function buildURL(url: string, params?: any) {
     values.forEach(val => {
       if(isDate(val)) {
         val = val.toISOString()
-      } else if (isObject(val)) {
+      } else if (isPlantObject(val)) {
         val = JSON.stringify(val)
       }
       parts.push(`${encode(key)}=${encode(val)}`)
