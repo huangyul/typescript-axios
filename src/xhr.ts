@@ -36,7 +36,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     }
 
     Object.keys(headers).forEach(name => {
-      // 根据
+      // 设置请求header，当data为空时，content-type没有意思，可以删掉
       if (data === null && name.toLowerCase() === 'content-type') {
         delete headers[name]
       } else {

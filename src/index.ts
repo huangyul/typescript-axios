@@ -4,7 +4,7 @@ import { buildUrl } from './helpers/url'
 import { AxiosRequestConfig, AxiosResponse } from './types'
 import xhr from './xhr'
 
-function axios(config: AxiosRequestConfig) {
+function axios(config: AxiosRequestConfig): Promise<AxiosResponse> {
   processConfig(config)
   return xhr(config).then(res => {
     return transformResponseData(res)

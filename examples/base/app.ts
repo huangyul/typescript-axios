@@ -87,6 +87,9 @@ import axios from '../../src/index'
 axios({
   method: 'post',
   url: '/base/post',
+  headers: {
+    'Content-Type': 'application/json;charset=utf-8'
+  },
   data: {
     a: 1,
     b: 2
@@ -98,7 +101,8 @@ axios({
 axios({
   method: 'post',
   url: '/base/post',
-  responseType: 'json',
+  // responseType: 'json',
+  // headers: { a: 1 },
   data: {
     a: 3,
     b: 4
