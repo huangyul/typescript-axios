@@ -1,6 +1,7 @@
 export type AxiosRequestConfig = {
   url: string // 请求地址
   method?: Method // 请求方法
+  headers?: any // 请求头
   data?: any // 请求数据
   params?: any // url参数
 }
