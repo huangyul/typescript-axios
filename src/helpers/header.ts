@@ -21,6 +21,7 @@ function normalizeHeaderName(headers: any, normalizedName: string): void {
 
 /**
  * 处理请求头，如果data为对象，则加入Content-Type
+ * 'Content-Type': 'application/json;charset=utf-8'
  * @param headers
  * @param data
  * @returns
@@ -30,7 +31,7 @@ export function processHeaders(headers: any, data: any): any {
 
   if (isPlainObject(data)) {
     if (headers && !headers['Content-Type']) {
-      headers['Content-Type'] = 'application/josn;charset=utf-8'
+      headers['Content-Type'] = 'application/json;charset=utf-8'
     }
   }
 
