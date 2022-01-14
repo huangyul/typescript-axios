@@ -6,6 +6,7 @@ export type AxiosRequestConfig = {
   data?: any // 请求数据
   params?: any // url参数
   responseType?: XMLHttpRequestResponseType
+  timeout?: number
 }
 
 // 响应参数
@@ -16,6 +17,15 @@ export type AxiosResponse = {
   headers: any
   config: AxiosRequestConfig
   request: any
+}
+
+// 错误类型
+export interface AxiosError extends Error {
+  config: AxiosRequestConfig
+  code?: string
+  request?: any
+  response?: AxiosResponse
+  isAxiosError: boolean
 }
 
 /**
