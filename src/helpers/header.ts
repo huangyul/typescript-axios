@@ -19,6 +19,12 @@ function normalizeHeaderName(headers: any, normalizedName: string): void {
   })
 }
 
+/**
+ * 处理请求头，如果data为对象，则加入Content-Type
+ * @param headers
+ * @param data
+ * @returns
+ */
 export function processHeaders(headers: any, data: any): any {
   normalizeHeaderName(headers, 'Content-Type')
 
@@ -31,6 +37,11 @@ export function processHeaders(headers: any, data: any): any {
   return headers
 }
 
+/**
+ * 处理响应头，将字符串转为对象
+ * @param headers
+ * @returns
+ */
 export function parseHeaders(headers: string): any {
   let parsed = Object.create(null)
   if (!headers) {
